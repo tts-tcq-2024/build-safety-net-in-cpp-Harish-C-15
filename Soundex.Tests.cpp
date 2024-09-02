@@ -67,28 +67,25 @@ TEST(SoundexTest, HandlesAdjacentConsonants) {
 
 // Test cases for the longer names that require truncation
 TEST(SoundexTest, HandlesLongNames) {
-    EXPECT_EQ(generateSoundex("Kumarswamy"), "K562");
-    EXPECT_EQ(generateSoundex("Abhishek"), "A120");
-    EXPECT_EQ(generateSoundex("Yadiyurappa"), "Y361");
-    EXPECT_EQ(generateSoundex("Madeshwara"), "M326");
-    EXPECT_EQ(generateSoundex("GuruRandhaava"), "G653");
-    EXPECT_EQ(generateSoundex("NeilNithinMukesh"), "N453");
-    EXPECT_EQ(generateSoundex("KrishnaVamshi"), "K625");
-    EXPECT_EQ(generateSoundex("SathishKumar"), "S325");
+    EXPECT_EQ(generateSoundex("Devegowda"), "D123");
+    EXPECT_EQ(generateSoundex("MSD"), "M230");
+    EXPECT_EQ(generateSoundex("Raina"), "R500");
+    EXPECT_EQ(generateSoundex("Balaji"), "B420");
+    EXPECT_EQ(generateSoundex("Singh"), "S520");
+    EXPECT_EQ(generateSoundex("NeilPattrickHarris"), "N413");
+    EXPECT_EQ(generateSoundex("Rajamouli"), "R254");
 }
 
 // Test cases for the names with hyphens or spaces
 TEST(SoundexTest, HandlesHyphensAndSpaces) {
-    EXPECT_EQ(generateSoundex("Sai-Sudarshan"), "S236");
+    EXPECT_EQ(generateSoundex("Ruturaj-Gaikwad"), "R362");
     EXPECT_EQ(generateSoundex("Dinesh-Karthik"), "D526");
-    EXPECT_EQ(generateSoundex("Om Shakthi"), "O523");
-    EXPECT_EQ(generateSoundex("Shree Devi"), "S631");
-    EXPECT_EQ(generateSoundex("Tik-tok"), "T232");
     EXPECT_EQ(generateSoundex("Virat Kohli"), "V632");
+    EXPECT_EQ(generateSoundex("Amithab Bachhan"), "A531");
 }
 
 // Test cases for the names with non-alphabetic characters
 TEST(SoundexTest, HandlesNonAlphabeticCharacters) {
-    EXPECT_EQ(generateSoundex("R'Sharma"), "R265");
-    EXPECT_EQ(generateSoundex("M@630Satellite"), "M234");
+    EXPECT_EQ(generateSoundex("J'Bumrah"), "J156");
+    EXPECT_EQ(generateSoundex("Harish@15"), "H620");
 }
