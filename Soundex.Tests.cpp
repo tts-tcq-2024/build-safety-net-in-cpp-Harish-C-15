@@ -49,6 +49,7 @@ TEST(SoundexTest, HandlesAdjacentConsonants) {
 // Test cases for the longer names that require truncation
 TEST(SoundexTest, HandlesLongNames) {
     EXPECT_EQ(generateSoundex("Devegowda"), "D123");
+    EXPECT_EQ(generateSoundex("0"), "0000");
     EXPECT_EQ(generateSoundex("MSD"), "M230");
     EXPECT_EQ(generateSoundex("Raina"), "R500");
     EXPECT_EQ(generateSoundex("Balaji"), "B420");
