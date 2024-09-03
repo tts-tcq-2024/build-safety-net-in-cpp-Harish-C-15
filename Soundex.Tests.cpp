@@ -60,6 +60,8 @@ TEST(SoundexTest, HandlesLongNames) {
     EXPECT_EQ(generateSoundex("Barack"), "B620");
     EXPECT_EQ(generateSoundex("abcdefghijklmnopqrstuvwxyz"), "A123");
     EXPECT_EQ(generateSoundex("RoBErt"), "R163");
+    EXPECT_EQ(generateSoundex("0"), "0000");
+    EXPECT_EQ(generateSoundex("1234"), "1000");
 }
 
 // Test cases for the names with hyphens or spaces
