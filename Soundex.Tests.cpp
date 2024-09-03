@@ -8,33 +8,12 @@ TEST(SoundexTest, HandlesEmptyString) {
 
 // Test cases for the single character check
 TEST(SoundexTest, HandlesSingleCharacter) {
-    EXPECT_EQ(generateSoundex("A"), "A000");
-    EXPECT_EQ(generateSoundex("B"), "B000");
-    EXPECT_EQ(generateSoundex("C"), "C000");
-    EXPECT_EQ(generateSoundex("D"), "D000");
-    EXPECT_EQ(generateSoundex("E"), "E000");
-    EXPECT_EQ(generateSoundex("F"), "F000");
-    EXPECT_EQ(generateSoundex("G"), "G000");
-    EXPECT_EQ(generateSoundex("H"), "H000");
-    EXPECT_EQ(generateSoundex("I"), "I000");
-    EXPECT_EQ(generateSoundex("J"), "J000");
-    EXPECT_EQ(generateSoundex("K"), "K000");
-    EXPECT_EQ(generateSoundex("L"), "L000");
-    EXPECT_EQ(generateSoundex("M"), "M000");
-    EXPECT_EQ(generateSoundex("N"), "N000");
-    EXPECT_EQ(generateSoundex("O"), "O000");
-    EXPECT_EQ(generateSoundex("P"), "P000");
-    EXPECT_EQ(generateSoundex("Q"), "Q000");
-    EXPECT_EQ(generateSoundex("R"), "R000");
-    EXPECT_EQ(generateSoundex("S"), "S000");
-    EXPECT_EQ(generateSoundex("T"), "T000");
-    EXPECT_EQ(generateSoundex("U"), "U000");
-    EXPECT_EQ(generateSoundex("V"), "V000");
-    EXPECT_EQ(generateSoundex("W"), "W000");
-    EXPECT_EQ(generateSoundex("X"), "X000");
-    EXPECT_EQ(generateSoundex("Y"), "Y000");
-    EXPECT_EQ(generateSoundex("Z"), "Z000");
+    for (char c = 'A'; c <= 'Z'; ++c) {
+        std::string expected = std::string(1, c) + "000";
+        EXPECT_EQ(generateSoundex(std::string(1, c)), expected);
+    }
 }
+
 
 // Test cases for the names with vowels and certain consonants that should be ignored
 TEST(SoundexTest, HandlesIgnoredCharacters) {
