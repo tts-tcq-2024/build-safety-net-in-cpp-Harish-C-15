@@ -48,6 +48,7 @@ TEST(SoundexTest, HandlesAdjacentConsonants) {
 
 // Test cases for the longer names that require truncation
 TEST(SoundexTest, HandlesLongNames) {
+    EXPECT_EQ(generateSoundex("Aeiouhw"), "A000");
     EXPECT_EQ(generateSoundex("Robert"), "R163");
     EXPECT_EQ(generateSoundex("Rupert"), "R163");
     EXPECT_EQ(generateSoundex("Ashcraft"), "A261");
@@ -58,6 +59,7 @@ TEST(SoundexTest, HandlesLongNames) {
     EXPECT_EQ(generateSoundex("Hildebrand"), "H431");
     EXPECT_EQ(generateSoundex("Barack"), "B620");
     EXPECT_EQ(generateSoundex("abcdefghijklmnopqrstuvwxyz"), "A123");
+    EXPECT_EQ(generateSoundex("RoBErt"), "R163");
 }
 
 // Test cases for the names with hyphens or spaces
