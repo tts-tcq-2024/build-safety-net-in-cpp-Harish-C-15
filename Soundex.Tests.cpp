@@ -48,14 +48,15 @@ TEST(SoundexTest, HandlesAdjacentConsonants) {
 
 // Test cases for the longer names that require truncation
 TEST(SoundexTest, HandlesLongNames) {
-    EXPECT_EQ(generateSoundex("Devegowda"), "D123");
-    EXPECT_EQ(generateSoundex("0"), "0000");
-    EXPECT_EQ(generateSoundex("MSD"), "M230");
-    EXPECT_EQ(generateSoundex("Raina"), "R500");
-    EXPECT_EQ(generateSoundex("Balaji"), "B420");
-    EXPECT_EQ(generateSoundex("SiNgH"), "S520");
-    EXPECT_EQ(generateSoundex("AAAAAAA"), "A000");
-    EXPECT_EQ(generateSoundex("Rajamouli"), "R254");
+    EXPECT_EQ(generateSoundex("Robert"), "R163");
+    EXPECT_EQ(generateSoundex("Rupert"), "R163");
+    EXPECT_EQ(generateSoundex("Ashcraft"), "A261");
+    EXPECT_EQ(generateSoundex("Tymczak"), "T522");
+    EXPECT_EQ(generateSoundex("Pfister"), "P236");
+    EXPECT_EQ(generateSoundex("Ashworth"), "A236");
+    EXPECT_EQ(generateSoundex("Bobby"), "B100");
+    EXPECT_EQ(generateSoundex("Hildebrand"), "H431");
+    EXPECT_EQ(generateSoundex("Barack"), "B620");
     EXPECT_EQ(generateSoundex("abcdefghijklmnopqrstuvwxyz"), "A123");
 }
 
