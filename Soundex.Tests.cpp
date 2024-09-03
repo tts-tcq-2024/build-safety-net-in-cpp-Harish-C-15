@@ -17,9 +17,16 @@ TEST(SoundexTest, HandlesSingleCharacter) {
 
 // Test cases for the names with vowels and certain consonants that should be ignored
 TEST(SoundexTest, HandlesIgnoredCharacters) {
-    EXPECT_EQ(generateSoundex("AEIOU"), "A000");
-    EXPECT_EQ(generateSoundex("HW"), "H000");
+    std::vector<std::pair<std::string, std::string>> testCases = {
+        {"AEIOU", "A000"}, {"EAIOU", "E000"}, {"IAEOU", "I000"}, 
+        {"OAEIU", "O000"}, {"UAEIO", "U000"}, {"HW", "H000"}, 
+        {"WH", "W000"}
+    };
+    for (const auto& testCase : testCases) {
+        EXPECT_EQ(generateSoundex(testCase.first), testCase.second);
+    }
 }
+
 
 // Test cases for the names with adjacent consonants that should be ignored
 TEST(SoundexTest, HandlesAdjacentConsonants) {
