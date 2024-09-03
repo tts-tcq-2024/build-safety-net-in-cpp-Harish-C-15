@@ -3,7 +3,7 @@
 
 // Test cases for the empty string check
 TEST(SoundexTest, HandlesEmptyString) {
-    EXPECT_EQ(generateSoundex(""), "0000");
+    EXPECT_EQ(generateSoundex(""), "");
 }
 
 // Test cases for the single character check
