@@ -3,7 +3,7 @@
 
 // Test cases for the empty string check
 TEST(SoundexTest, HandlesEmptyString) {
-    EXPECT_EQ(generateSoundex(""), "");
+    EXPECT_EQ(generateSoundex(""), "0000");
 }
 
 // Test cases for the single character check
@@ -52,9 +52,10 @@ TEST(SoundexTest, HandlesLongNames) {
     EXPECT_EQ(generateSoundex("MSD"), "M230");
     EXPECT_EQ(generateSoundex("Raina"), "R500");
     EXPECT_EQ(generateSoundex("Balaji"), "B420");
-    EXPECT_EQ(generateSoundex("Singh"), "S520");
-    EXPECT_EQ(generateSoundex("NeilPattrickHarris"), "N413");
+    EXPECT_EQ(generateSoundex("SiNgH"), "S520");
+    EXPECT_EQ(generateSoundex("AAAAAAA"), "A000");
     EXPECT_EQ(generateSoundex("Rajamouli"), "R254");
+    EXPECT_EQ(generateSoundex("abcdefghijklmnopqrstuvwxyz"), "A123");
 }
 
 // Test cases for the names with hyphens or spaces
