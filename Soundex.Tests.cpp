@@ -23,26 +23,21 @@ TEST(SoundexTest, HandlesIgnoredCharacters) {
 
 // Test cases for the names with adjacent consonants that should be ignored
 TEST(SoundexTest, HandlesAdjacentConsonants) {
-    EXPECT_EQ(generateSoundex("BB"), "B100");
-    EXPECT_EQ(generateSoundex("CC"), "C200");
-    EXPECT_EQ(generateSoundex("DD"), "D300");
-    EXPECT_EQ(generateSoundex("FF"), "F100");
-    EXPECT_EQ(generateSoundex("GG"), "G200");
-    EXPECT_EQ(generateSoundex("JJ"), "J200");
-    EXPECT_EQ(generateSoundex("KK"), "K200");
-    EXPECT_EQ(generateSoundex("LL"), "L400");
-    EXPECT_EQ(generateSoundex("MM"), "M500");
-    EXPECT_EQ(generateSoundex("NN"), "N500");
-    EXPECT_EQ(generateSoundex("PP"), "P100");
-    EXPECT_EQ(generateSoundex("QQ"), "Q200");
-    EXPECT_EQ(generateSoundex("RR"), "R600");
-    EXPECT_EQ(generateSoundex("SS"), "S200");
-    EXPECT_EQ(generateSoundex("TT"), "T300");
-    EXPECT_EQ(generateSoundex("VV"), "V100");
-    EXPECT_EQ(generateSoundex("XX"), "X200");
-    EXPECT_EQ(generateSoundex("YY"), "Y000");
-    EXPECT_EQ(generateSoundex("ZZ"), "Z200");
+    std::map<char, std::string> soundexMapping = {
+        {'B', "B100"}, {'C', "C200"}, {'D', "D300"}, {'F', "F100"}, 
+        {'G', "G200"}, {'J', "J200"}, {'K', "K200"}, {'L', "L400"}, 
+        {'M', "M500"}, {'N', "N500"}, {'P', "P100"}, {'Q', "Q200"}, 
+        {'R', "R600"}, {'S', "S200"}, {'T', "T300"}, {'V', "V100"}, 
+        {'X', "X200"}, {'Y', "Y000"}, {'Z', "Z200"}
+    };
+
+    for (const auto& entry : soundexMapping) {
+        char consonant = entry.first;
+        std::string expected = entry.second;
+        EXPECT_EQ(generateSoundex(std::string(2, consonant)), expected);
+    }
 }
+
 
 // Test cases for the longer names that require truncation
 TEST(SoundexTest, HandlesLongNames) {
