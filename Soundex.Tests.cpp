@@ -53,7 +53,7 @@ TEST(SoundexTest, HandlesLongNames) {
     EXPECT_EQ(generateSoundex("Ashcraft"), "A261");
     EXPECT_EQ(generateSoundex("Tymczak"), "T522");
     EXPECT_EQ(generateSoundex("Pfister"), "P236");
-    EXPECT_EQ(generateSoundex("Ashworth"), "A236");
+    EXPECT_EQ(generateSoundex("Ashworth"), "A263");
     EXPECT_EQ(generateSoundex("Bobby"), "B100");
     EXPECT_EQ(generateSoundex("Hildebrand"), "H431");
     EXPECT_EQ(generateSoundex("Barack"), "B620");
