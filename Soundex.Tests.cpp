@@ -6,7 +6,7 @@ TEST(SoundexTest, HandlesEmptyString) {
     EXPECT_EQ(generateSoundex(""), "");
 }
 // Test Cases for special character
-TEST(SoundexTest, HandlesEmptyString) {
+TEST(SoundexTest, HandlesSpecialCharacter) {
     EXPECT_EQ(generateSoundex("!"), "");
 }
 // Test cases for the single character check
