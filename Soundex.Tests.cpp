@@ -5,7 +5,10 @@
 TEST(SoundexTest, HandlesEmptyString) {
     EXPECT_EQ(generateSoundex(""), "");
 }
-
+// Test Cases for special character
+TEST(SoundexTest, HandlesEmptyString) {
+    EXPECT_EQ(generateSoundex("!"), "");
+}
 // Test cases for the single character check
 TEST(SoundexTest, HandlesSingleCharacter) {
     for (char c = 'A'; c <= 'Z'; ++c) {
